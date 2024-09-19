@@ -2,7 +2,7 @@ import wollok.game.*
 
 class Comida{
 	var property fueComido = false
-
+	method teEncontro(ave){}
 }
 
 object manzana inherits Comida(){

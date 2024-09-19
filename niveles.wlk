@@ -26,7 +26,7 @@ object tutorial2 {
 	}
 
 }
-/*
+
 object tutorial3 {
 
 	method iniciar() {
@@ -37,10 +37,10 @@ object tutorial3 {
 		game.addVisual(pepita)
 		config.configurarTeclas()
 		config.configurarColisiones()
-	//	config.configurarGravedad()
+		config.configurarGravedad()
 	}
 
-}*/
+}
 
 object config {
 
@@ -57,7 +57,9 @@ object config {
 	}
 
 	method configurarGravedad(){
-		game.onTick(800, "Cae 1", {pepita.cae()})
+		if (!pepita.estaEnElNido()){
+			game.onTick(800, "Cae 1", {pepita.cae()})
+		}
 	}
 }
 
