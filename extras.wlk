@@ -15,9 +15,6 @@ object nido {
 
 
 object silvestre {
-
+	method position() = game.at(pepita.position().x().max(3), 0)
 	method image() = "silvestre.png"
-
-	method position() = game.origin()
-	
 }
