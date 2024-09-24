@@ -26,7 +26,7 @@ object pepita {
 	}
 
 	method irA(nuevaPosicion) {
-		if (!self.estaCansada() and self.dentroDeTablero(nuevaPosicion)){
+		if (!self.estaCansada() and self.dentroDeTablero(nuevaPosicion) and !pepita.esAtrapada()){
 			self.vola(position.distance(nuevaPosicion))
 			position = nuevaPosicion
 		}

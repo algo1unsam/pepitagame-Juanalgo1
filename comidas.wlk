@@ -3,6 +3,7 @@ import wollok.game.*
 class Comida{
 	var property fueComido = false
 	method teEncontro(ave){}
+	method esComido(){game.removeVisual(self)}
 }
 
 object manzana inherits Comida(){
@@ -12,10 +13,6 @@ object manzana inherits Comida(){
 	var property position = game.at(1, 8)
 
 	method energiaQueOtorga() = 40
-
-	method esComido(){
-		self.position(game.at(-1,0))
-	}
 }
 
 object alpiste inherits Comida(){
@@ -25,9 +22,5 @@ object alpiste inherits Comida(){
 	var property position = game.at(2, 2)
 
 	method energiaQueOtorga() = 70
-
-	method esComido(){
-		self.position(game.at(-1,0))
-	}
 }
 
