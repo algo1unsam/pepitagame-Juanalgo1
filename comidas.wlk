@@ -2,7 +2,7 @@ import wollok.game.*
 
 class Comida{
 	var property fueComido = false
-	method teEncontro(ave){}
+	method teEncontro(ave){} //No hace nada
 	method esComido(){game.removeVisual(self)}
 
 	method image(){}

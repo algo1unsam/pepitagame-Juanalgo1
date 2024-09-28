@@ -57,9 +57,7 @@ object config {
 	}
 
 	method configurarGravedad(){
-		if (!pepita.estaEnElNido()){
-			game.onTick(800, "Cae 1", {pepita.cae()})
-		}
+		game.onTick(800, "Cae 1", {pepita.cae()})
 	}
 }
 

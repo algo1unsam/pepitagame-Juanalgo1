@@ -50,7 +50,7 @@ object pepita {
 	}
 
 	method cae(){
-		if (!self.estaEnElSuelo()){
+		if (!self.estaEnElSuelo() and !self.estaEnElNido()){
 			position = self.position().down(1)
 		}
 	}
