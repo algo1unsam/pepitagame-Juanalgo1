@@ -8,11 +8,40 @@ program PepitaGame {
 	game.title("Pepita")
 	game.height(10)
 	game.width(10)
-	game.boardGround("fondo2.jpg")
+	game.boardGround("fondo.jpg")
 
 	tutorial1.iniciar()
 
 	game.showAttributes(pepita) //Debug
+	game.showAttributes(silvestre) //Debug
+
+	game.start()
+}
+
+program PepitaGame2 {
+	game.title("Pepita")
+	game.height(10)
+	game.width(10)
+	game.boardGround("fondo.jpg")
+
+	tutorial2.iniciar()
+
+	game.showAttributes(pepita) //Debug
+	game.showAttributes(silvestre) //Debug
+
+	game.start()
+}
+
+program PepitaGame3 {
+	game.title("Pepita")
+	game.height(10)
+	game.width(10)
+	game.boardGround("Captura de pantalla 2024-06-30 175630.png")
+
+	tutorial3.iniciar()
+
+	game.showAttributes(pepita) //Debug
+	game.showAttributes(silvestre) //Debug
 
 	game.start()
 }

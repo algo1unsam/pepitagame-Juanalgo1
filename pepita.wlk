@@ -7,20 +7,33 @@ object pepita {
 	var property position = game.origin()
 
 	method image() {
-		return if (self.estaEnElNido()) "pepita-grande.png" else "pepita.png"
+		return if (self.estaEnElNido()) "pepita-grande.png" else if (self.esAtrapada() or self.estaCansada()) "pepita-gris.png" else "pepita.png"
 	}
 
-	method come(comida) {
-		energia = energia + comida.energiaQueOtorga()
+	method comer() {
+		if (!self.paradaSobre().fueComido()){
+			energia += self.paradaSobre().energiaQueOtorga()
+			self.paradaSobre().esComido()
+		}
 	}
 
 	method vola(kms) {
 		energia = energia - kms * 9
 	}
 
+	method esAtrapada(){
+		return self.position() == silvestre.position()
+	}
+
 	method irA(nuevaPosicion) {
-		self.vola(position.distance(nuevaPosicion))
-		position = nuevaPosicion
+		if (!self.estaCansada() and self.dentroDeTablero(nuevaPosicion) and !self.esAtrapada()){
+			self.vola(position.distance(nuevaPosicion))
+			position = nuevaPosicion
+		}
+	}
+
+	method dentroDeTablero(posicion){
+		return posicion.x().between(0, game.height()) and posicion.y().between(0, game.width()) 
 	}
 
 	method estaCansada() {
@@ -36,5 +49,12 @@ object pepita {
 		return position.y() == 0 
 	}
 
+	method cae(){
+		if (!self.estaEnElSuelo() and !self.estaEnElNido()){
+			position = self.position().down(1)
+		}
+	}
+
+	method paradaSobre() = game.uniqueCollider(self)
 }
 

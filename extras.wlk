@@ -8,16 +8,18 @@ object nido {
 	method image() = "nido.png"
 
 	method teEncontro(ave) {
-		game.say(ave, "GANASTE! WIII")
+		game.say(ave, "¡GANÉ!")
 		game.schedule(2000, { game.stop() })
 	}
 }
 
 
 object silvestre {
-
+	method position() = game.at(pepita.position().x().max(3), 0)
 	method image() = "silvestre.png"
 
-	method position() = game.origin()
-	
+	method teEncontro(ave) {
+		game.say(ave, "¡PERDÍ!")
+		game.schedule(2000, { game.stop() })
+	}
 }
