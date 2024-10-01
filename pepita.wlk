@@ -33,7 +33,7 @@ object pepita {
 	}
 
 	method dentroDeTablero(posicion){
-		return posicion.x() < game.height() and posicion.x() >= 0 and posicion.y() < game.width() and posicion.y() >= 0 
+		return posicion.x().between(0, game.height()) and posicion.y().between(0, game.width()) 
 	}
 
 	method estaCansada() {
